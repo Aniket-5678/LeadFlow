@@ -14,16 +14,7 @@ const app = express();
 
 app.use(express.json());
 
-const allowedOrigins = [
-    "http://localhost:3000",
-    "https://leadflow-management.netlify.app",
-];
-
-app.use(cors({
-    origin: allowedOrigins,
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-}));
+app.use(cors())
 
 // Authentication Routes
 app.use("/api/auth", authRoutes);
